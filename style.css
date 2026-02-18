@@ -1,6 +1,8 @@
 body {
   background-color: black !important;
   color: white !important;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .perfil {
@@ -25,11 +27,11 @@ body {
   padding: 5px;
   margin-right: 30px;
   position: relative;
-  transition: transform 0.3s ease-in-out; /* Se añade para la transición de escala */
+  transition: transform 0.3s ease-in-out;
 }
 
 .imagen_p:hover {
-  transform: scale(1.1); /* Aseguramos que la imagen se agrande al hacer hover */
+  transform: scale(1.1);
 }
 
 .texto {
@@ -39,7 +41,7 @@ body {
 }
 
 .texto:hover {
-  transform: scale(1.05); /* Agrandar el texto al hacer hover */
+  transform: scale(1.05);
 }
 
 .icono_1, .icono_2 {
@@ -111,7 +113,7 @@ body {
   position: absolute;
   top: 0px;
   left: 15px;
-  font-size: 24px; /* Aumentado el tamaño de la fuente */
+  font-size: 24px;
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
@@ -121,12 +123,12 @@ body {
 }
 
 .about_me:hover {
-  transform: scale(1.05); /* Agrandar el texto al hacer hover */
+  transform: scale(1.05);
 }
 
 .about_me p {
   margin: 5px 0 0;
-  font-size: 16px; /* Aumentado el tamaño de la fuente */
+  font-size: 16px;
   font-weight: normal;
 }
 
@@ -154,7 +156,7 @@ body {
 }
 
 .container:hover {
-  transform: scale(1.02); /* Agrandar el contenedor */
+  transform: scale(1.02);
 }
 
 .parent {
@@ -202,36 +204,36 @@ body {
   margin-top: 30px;
   text-align: center;
   font-family: 'Bungee Shade', display;
-  font-size: 30px; /* Aumentado el tamaño de la fuente */
+  font-size: 30px;
   transition: transform 0.3s ease;
 }
 
 .t-pro:hover {
-  transform: scale(1.05); /* Agrandar el texto al hacer hover */
+  transform: scale(1.05);
 }
 
 .t-ab {
   margin-top: 10px;
   text-align: center;
   font-family: 'Bungee Shade', display;
-  font-size: 30px; /* Aumentado el tamaño de la fuente */
+  font-size: 30px;
   transition: transform 0.3s ease;
 }
 
 .t-ab:hover {
-  transform: scale(1.05); /* Agrandar el texto al hacer hover */
+  transform: scale(1.05);
 }
 
 .t-sk {
   margin-top: 10px;
   text-align: center;
   font-family: 'Bungee Shade', display;
-  font-size: 30px; /* Aumentado el tamaño de la fuente */
+  font-size: 30px;
   transition: transform 0.3s ease;
 }
 
 .t-sk:hover {
-  transform: scale(1.05); /* Agrandar el texto al hacer hover */
+  transform: scale(1.05);
 }
 
 .card-container {
@@ -240,10 +242,11 @@ body {
   margin-top: 50px;
   margin-bottom: 20px;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .card-container:hover {
-  transform: scale(1.02); /* Agrandar la tarjeta al hacer hover */
+  transform: scale(1.02);
 }
 
 .card {
@@ -264,11 +267,57 @@ body {
   transform: scale(1.05);
 }
 
+/* ===== MEDIA QUERIES PARA HACERLO RESPONSIVO ===== */
+
+/* Pantallas grandes (1200px o menos) */
+@media (max-width: 1200px) {
+  .perfil {
+    margin-left: 400px;
+  }
+  
+  .icono_1 {
+    right: 520px;
+  }
+  
+  .icono_2 {
+    right: 480px;
+  }
+}
+
+/* Pantallas medianas (992px o menos) */
+@media (max-width: 992px) {
+  .perfil {
+    margin-left: 250px;
+  }
+  
+  .imagen_p {
+    width: 250px;
+    height: 250px;
+    margin-left: -200px;
+  }
+  
+  .icono_1 {
+    right: 320px;
+    top: 260px;
+  }
+  
+  .icono_2 {
+    right: 280px;
+    top: 260px;
+  }
+  
+  .container {
+    margin-top: 400px;
+  }
+}
+
+/* Tablets (768px o menos) */
 @media (max-width: 768px) {
   .perfil {
-    margin-left: 50px;
+    margin-left: 0;
     flex-direction: column; 
     align-items: center;
+    padding: 20px;
   }
 
   .imagen_p {
@@ -283,17 +332,64 @@ body {
     margin-left: 0; 
     margin-top: 20px;
     text-align: center;
+    padding-right: 0;
   }
   
   .icono_1, .icono_2 {
     position: relative;
-    top: 0;
-    left: 0;
-    margin-left: 20px; 
-    font-size: 1.5rem; 
+    right: auto;
+    top: auto;
+    margin: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .icono_1 {
+    right: auto;
+    top: auto;
+  }
+  
+  .icono_2 {
+    right: auto;
+    top: auto;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .container {
+    margin-top: 300px;
+  }
+  
+  .parent {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .div1 {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+  
+  .div2 {
+    grid-column: span 1;
+    grid-column-start: auto;
+  }
+  
+  .div3 {
+    grid-column: span 1;
+    grid-row: auto;
+    grid-column-start: auto;
+    grid-row-start: auto;
+  }
+  
+  .card {
+    width: 85%;
   }
 }
 
+/* Móviles pequeños (480px o menos) */
 @media (max-width: 480px) {
   .imagen_p {
     width: 200px; 
@@ -304,6 +400,14 @@ body {
   .texto {
     font-size: 14px; 
     text-align: center;
+  }
+  
+  .h1 {
+    font-size: 24px;
+  }
+  
+  .h3, .h4 {
+    font-size: 18px;
   }
 
   .icono_1, .icono_2 {
@@ -316,5 +420,46 @@ body {
     gap: 10px;
     justify-content: center; 
     flex-wrap: wrap; 
+  }
+  
+  .container {
+    margin-top: 250px;
+    padding: 10px;
+  }
+  
+  .t-pro, .t-ab, .t-sk {
+    font-size: 24px;
+  }
+  
+  .card {
+    width: 95%;
+  }
+  
+  .div3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .div3 i, .div3 img {
+    font-size: 1.5rem;
+  }
+}
+
+/* Móviles muy pequeños (320px o menos) */
+@media (max-width: 320px) {
+  .imagen_p {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .div3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .h1 {
+    font-size: 20px;
+  }
+  
+  .container {
+    margin-top: 200px;
   }
 }
